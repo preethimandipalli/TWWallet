@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="utility.WalletTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-03-29T08:26:40" hostname="LAPTOP-0U5RJ1U5" time="0.032">
+  <properties/>
+  <testcase name="TestIf1DollarIsNotEqualTo75Dollars()" classname="utility.WalletTest" time="0.032"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
