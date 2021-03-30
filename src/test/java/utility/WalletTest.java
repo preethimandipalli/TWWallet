@@ -1,6 +1,6 @@
 package utility;
 
-import org.junit.jupiter.api.Assertions;
+
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -8,24 +8,27 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class WalletTest {
     @Test
     void TestIf1DollarEqualToNRupees() {
-        double dollars = 1;
-        double rupees = 74.85;
-        Wallet wallet = new Wallet(dollars,rupees);
-
-        boolean actualValue = wallet.checkIfXDollarsIsEqualToYRupees();
+        Currency rupee = new Currency(1,"rupees");
+        Currency dollar = new Currency(74.85,"dollars");
+        Wallet wallet = new Wallet();
+        
+        boolean actualValue = wallet.checkIfXDollarsIsEqualToYRupees(rupee,dollar);
 
         assertEquals(true,actualValue);
     }
 
     @Test
-    void TestIf1DollarIsNotEqualTo75Dollars() {
-        double dollars = 1;
-        double rupees = 75;
-        Wallet wallet = new Wallet(dollars,rupees);
+    void TestIf1DollarNotEqualToNRupees() {
+        Currency rupee = new Currency(1,"rupees");
+        Currency dollar = new Currency(80,"dollars");
+        Wallet wallet = new Wallet();
 
-        boolean actualValue = wallet.checkIfXDollarsIsEqualToYRupees();
+        boolean actualValue = wallet.checkIfXDollarsIsEqualToYRupees(rupee,dollar);
 
         assertEquals(false,actualValue);
     }
 
+
 }
+
+
