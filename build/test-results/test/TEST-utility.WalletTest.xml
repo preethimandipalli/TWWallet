@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="utility.WalletTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-03-30T09:27:09" hostname="MacBook-Air-4.local" time="0.147">
+<testsuite name="utility.WalletTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2021-03-30T10:38:46" hostname="MacBook-Air-4.local" time="0.111">
   <properties/>
-  <testcase name="TestIf1DollarEqualToNRupees()" classname="utility.WalletTest" time="0.137"/>
-  <testcase name="TestIf1DollarNotEqualToNRupees()" classname="utility.WalletTest" time="0.005"/>
+  <testcase name="TestIf1DollarEqualToNRupees()" classname="utility.WalletTest" time="0.069"/>
+  <testcase name="TestIfTotalAmountIsEqualToYRupees()" classname="utility.WalletTest" time="0.012"/>
+  <testcase name="TestIf1DollarNotEqualToNRupees()" classname="utility.WalletTest" time="0.009"/>
+  <testcase name="TestIfTotalAmountIsEqualToYDollars()" classname="utility.WalletTest" time="0.008"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
