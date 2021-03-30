@@ -33,8 +33,8 @@ public class WalletTest {
         double expectedValue = 124.85;
         Wallet wallet = new Wallet();
 
-        wallet.addCurrencyToWallet(rupee);
-        wallet.addCurrencyToWallet(dollar);
+        wallet.addCurrencyAmountToWallet(rupee);
+        wallet.addCurrencyAmountToWallet(dollar);
         double actualValue = wallet.getTotalAmountInPreferredCurrency(preferredCurrency);
 
         assertEquals(expectedValue,actualValue);
@@ -49,13 +49,33 @@ public class WalletTest {
         double expectedAmount = 1.99;
         Wallet wallet = new Wallet();
 
-        wallet.addCurrencyToWallet(rupee);
-        wallet.addCurrencyToWallet(dollar);
+        wallet.addCurrencyAmountToWallet(rupee);
+        wallet.addCurrencyAmountToWallet(dollar);
         double actualAmount = wallet.getTotalAmountInPreferredCurrency(preferredCurrency);
 
         assertEquals(expectedAmount,actualAmount);
 
     }
+
+    @Test
+    void TestIfTotalAmountIszEqualToYRupees(){
+        Currency rupee1 = new Currency(74.85,"rupees");
+        Currency dollar = new Currency(1,"dollars");
+        Currency rupee2 = new Currency(149.7,"rupees");
+        String preferredCurrency = "dollars";
+        double expectedValue = 4;
+        Wallet wallet = new Wallet();
+
+        wallet.addCurrencyAmountToWallet(rupee1);
+        wallet.addCurrencyAmountToWallet(dollar);
+        wallet.addCurrencyAmountToWallet(rupee2);
+        double actualValue = wallet.getTotalAmountInPreferredCurrency(preferredCurrency);
+
+        assertEquals(expectedValue,actualValue);
+
+    }
+
+
 
 
 }

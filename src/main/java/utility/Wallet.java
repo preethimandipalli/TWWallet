@@ -1,9 +1,15 @@
 package utility;
 
+import java.util.HashMap;
+
 public class Wallet {
 
-    double dollarValueInRupees = 74.85;
     double totalBalanceInRupees;
+    HashMap<String,Double> currencyValuesInRupees= new HashMap<>();
+
+    public Wallet(){
+        currencyValuesInRupees.put("dollar",74.85);
+    }
 
     public boolean checkIfXDollarsIsEqualToYRupees(Currency dollar,Currency rupee) {
         if(rupee.currencyValue == (convertDollarsToRupees(dollar.currencyValue))){
@@ -12,15 +18,15 @@ public class Wallet {
         return false;
     }
 
-    private double convertDollarsToRupees(double dollars) {
-        return dollars * dollarValueInRupees;
+   private double convertDollarsToRupees(double dollars) {
+        return dollars * currencyValuesInRupees.get("dollar");
     }
 
     private double convertRupeesToDollars(double currencyValue) {
-        return currencyValue/dollarValueInRupees;
+        return currencyValue/currencyValuesInRupees.get("dollar");
     }
 
-    public void addCurrencyToWallet(Currency currency) {
+    public void addCurrencyAmountToWallet(Currency currency) {
         if(currency.currencyType.equals("rupees")){
             totalBalanceInRupees += currency.currencyValue;
         }
