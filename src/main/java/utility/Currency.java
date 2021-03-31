@@ -10,5 +10,4 @@ public class Currency {
         this.currencyValue=currencyValue;
     }
 
-
 }

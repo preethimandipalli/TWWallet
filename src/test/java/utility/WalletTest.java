@@ -5,11 +5,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class WalletTest {
     @Test
     void TestIf1DollarEqualToNRupees() {
-        Currency rupee = new Currency(1,"rupees");
-        Currency dollar = new Currency(74.85,"dollars");
+        Currency rupee = new Currency(74.85,"rupees");
+        Currency dollar = new Currency(1,"dollars");
         Wallet wallet = new Wallet();
 
-        boolean actualValue = wallet.checkIfXDollarsIsEqualToYRupees(rupee,dollar);
+        boolean actualValue = wallet.checkIfXDollarsIsEqualToYRupees(dollar,rupee);
 
         assertEquals(true,actualValue);
     }
@@ -20,7 +20,7 @@ public class WalletTest {
         Currency dollar = new Currency(1,"dollars");
         Wallet wallet = new Wallet();
 
-        boolean actualValue = wallet.checkIfXDollarsIsEqualToYRupees(rupee,dollar);
+        boolean actualValue = wallet.checkIfXDollarsIsEqualToYRupees(dollar,rupee);
 
         assertEquals(false,actualValue);
     }
