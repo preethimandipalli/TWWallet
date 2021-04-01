@@ -1,6 +1,8 @@
 package utility;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 public class WalletTest {
     @Test
@@ -58,7 +60,7 @@ public class WalletTest {
     }
 
     @Test
-    void TestIfTotalAmountIszEqualToYRupees(){
+    void TestIfTotalAmountDepositedIsEqualToYDollars(){
         Currency rupee1 = new Currency(74.85,"rupees");
         Currency dollar = new Currency(1,"dollars");
         Currency rupee2 = new Currency(149.7,"rupees");
@@ -74,9 +76,51 @@ public class WalletTest {
         assertEquals(expectedValue,actualValue);
 
     }
+    @Test
+    void TestAmountWithdrawnInRupees(){
+        Currency depositAmountInRupee = new Currency(74.85,"rupees");
+        Currency depositAmountInDollar = new Currency(1,"dollars");
+        Currency withdrawAmountInRupee = new Currency(2,"rupees");
+        String expectedValue = "Remaining Balance : 147.7";
+        Wallet wallet = new Wallet();
 
+        wallet.addCurrencyAmountToWallet(depositAmountInRupee);
+        wallet.addCurrencyAmountToWallet(depositAmountInDollar);
+        String actualValue = wallet.withDrawAmount(withdrawAmountInRupee);
 
+        assertEquals(expectedValue,actualValue);
 
+    }
+    @Test
+    void TestAmountWithdrawnInDollars(){
+        Currency depositAmountInRupee = new Currency(74.85,"rupees");
+        Currency depositAmountInDollar = new Currency(1,"dollars");
+        Currency withdrawAmountInDollar = new Currency(2,"dollars");
+        String expectedValue = "Remaining Balance : 0.0";
+        Wallet wallet = new Wallet();
+
+        wallet.addCurrencyAmountToWallet(depositAmountInRupee);
+        wallet.addCurrencyAmountToWallet(depositAmountInDollar);
+        String actualValue = wallet.withDrawAmount(withdrawAmountInDollar);
+
+        assertEquals(expectedValue,actualValue);
+
+    }
+    @Test
+    void TestThrowsExceptionIfBalanceIsInsufficient(){
+        Currency depositAmountINRupee = new Currency(74.85,"rupees");
+        Currency depositAmountInDollar = new Currency(1,"dollars");
+        Currency withdrawAmountInRupee = new Currency(500,"rupees");
+        String expectedMsg = "Balance insufficient";
+        Wallet wallet = new Wallet();
+
+        wallet.addCurrencyAmountToWallet(depositAmountINRupee);
+        wallet.addCurrencyAmountToWallet(depositAmountInDollar);
+
+        Throwable exception= Assertions.assertThrows(RuntimeException.class, () -> { wallet.withDrawAmount(withdrawAmountInRupee); });
+        assertEquals(expectedMsg,exception.getMessage());
+
+    }
 
 }
 

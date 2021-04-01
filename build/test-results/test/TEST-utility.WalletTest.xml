@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="utility.WalletTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-03-31T12:26:03" hostname="MacBook-Air-4.local" time="0.062">
+<testsuite name="utility.WalletTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2021-04-01T16:26:02" hostname="MacBook-Air-4.local" time="0.11">
   <properties/>
-  <testcase name="TestIf1DollarEqualToNRupees()" classname="utility.WalletTest" time="0.041"/>
-  <testcase name="TestIfTotalAmountIszEqualToYRupees()" classname="utility.WalletTest" time="0.01"/>
-  <testcase name="TestIfTotalAmountIsEqualToYRupees()" classname="utility.WalletTest" time="0.001"/>
-  <testcase name="TestIf1DollarNotEqualToNRupees()" classname="utility.WalletTest" time="0.001"/>
-  <testcase name="TestIfTotalAmountIsEqualToYDollars()" classname="utility.WalletTest" time="0.002"/>
+  <testcase name="TestAmountWithdrawnInRupees()" classname="utility.WalletTest" time="0.05"/>
+  <testcase name="TestIfTotalAmountDepositedIsEqualToYDollars()" classname="utility.WalletTest" time="0.005"/>
+  <testcase name="TestAmountWithdrawnInDollars()" classname="utility.WalletTest" time="0.003"/>
+  <testcase name="TestThrowsExceptionIfBalanceIsInsufficient()" classname="utility.WalletTest" time="0.016"/>
+  <testcase name="TestIf1DollarEqualToNRupees()" classname="utility.WalletTest" time="0.002"/>
+  <testcase name="TestIfTotalAmountIsEqualToYRupees()" classname="utility.WalletTest" time="0.004"/>
+  <testcase name="TestIf1DollarNotEqualToNRupees()" classname="utility.WalletTest" time="0.003"/>
+  <testcase name="TestIfTotalAmountIsEqualToYDollars()" classname="utility.WalletTest" time="0.004"/>
   <system-out><![CDATA[74.85
+74.85
+74.85
+149.7
+74.85
+74.85
+74.85
+74.85
 74.85
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
